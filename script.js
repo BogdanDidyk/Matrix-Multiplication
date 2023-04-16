@@ -42,3 +42,13 @@ function productTwoMatrices(matrix1, matrix2) {
 
     return resultMatrix;
 }
+
+function raiseMatrixToPower(matrix, n) {
+    let m = matrix;
+
+    for (let i = 1; i < n; i++) {
+        m = productTwoMatrices(matrix, m);
+    }
+
+    return m;
+}
