@@ -18,3 +18,27 @@ function getRandomMatrix(rows, cols, rndMin, rndMax) {
 
     return matrix;
 }
+
+function productTwoMatrices(matrix1, matrix2) {
+    const rowsM1 = matrix1.length;
+    const colsM1 = matrix1[0].length;
+    const rowsM2 = matrix2.length;
+    const colsM2 = matrix2[0].length;
+
+    if (colsM1 != rowsM2) {
+        throw new Error("Number of columns in the first matrix isn't equal to the number of rows in the second matrix!");
+    }
+
+    const resultMatrix = [];
+    for (let i = 0; i < rowsM1; i++) {
+        resultMatrix[i] = [];
+        for (let j = 0; j < colsM2; j++) {
+            resultMatrix[i][j] = 0;
+            for (let h = 0; h < rowsM2; h++) {
+                resultMatrix[i][j] += matrix1[i][h] * matrix2[h][j];
+            }
+        }
+    }
+
+    return resultMatrix;
+}
