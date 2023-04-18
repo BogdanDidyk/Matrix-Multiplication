@@ -59,3 +59,21 @@ const padCenter = function(str, maxLength, fillString) {
     const padLeft = spaces / 2 + len;
     return str.padStart(padLeft, fillString).padEnd(maxLength, fillString);
 }
+
+const m1 = getRandomMatrix(2, 1);
+const m2 = getRandomMatrix(1, 2);
+const m3 = productTwoMatrices(m1, m2);
+const m4 = getRandomMatrix(2, 2);
+const m5 = raiseMatrixToPower(m4, 2);
+
+console.log(padCenter("Multiply", 50, "-"));
+printMatrix(m1);
+console.log("");
+printMatrix(m2);
+console.log("");
+printMatrix(m3);
+
+console.log(padCenter("Raise To Power", 50, "-"));
+printMatrix(m4);
+console.log("");
+printMatrix(m5);
