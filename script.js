@@ -52,3 +52,10 @@ function raiseMatrixToPower(matrix, n) {
 
     return m;
 }
+
+const padCenter = function(str, maxLength, fillString) {
+    const len = str.length;
+    const spaces = maxLength - len;
+    const padLeft = spaces / 2 + len;
+    return str.padStart(padLeft, fillString).padEnd(maxLength, fillString);
+}
