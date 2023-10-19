@@ -10,17 +10,17 @@ function getArrayOfLength(length) {
     return Array.from({length});
 }
 
-function getRandomInteger(rndMin = 0, rndMax = 9) {
-    return Math.floor(Math.random() * (rndMax - rndMin + 1)) + rndMin;
+function getRandomInteger(min = 0, max = 9) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getRandomMatrix(rows, cols, rndMin, rndMax) {
+function getRandomMatrix(rows, cols, min, max) {
     const matrix = [];
 
     for (let i = 0; i < rows; i++) {
         matrix[i] = [];
         for (let j = 0; j < cols; j++) {
-            matrix[i][j] = getRandomInteger(rndMin, rndMax);
+            matrix[i][j] = getRandomInteger(min, max);
         }
     }
 
@@ -28,21 +28,21 @@ function getRandomMatrix(rows, cols, rndMin, rndMax) {
 }
 
 function productTwoMatrices(matrix1, matrix2) {
-    const rowsM1 = matrix1.length;
-    const colsM1 = matrix1[0].length;
-    const rowsM2 = matrix2.length;
-    const colsM2 = matrix2[0].length;
+    const rows1 = matrix1.length;
+    const cols1 = matrix1[0].length;
+    const rows2 = matrix2.length;
+    const cols2 = matrix2[0].length;
 
-    if (colsM1 != rowsM2) {
+    if (cols1 != rows2) {
         throw new Error("Number of columns in the first matrix isn't equal to the number of rows in the second matrix!");
     }
 
     const resultMatrix = [];
-    for (let i = 0; i < rowsM1; i++) {
+    for (let i = 0; i < rows1; i++) {
         resultMatrix[i] = [];
-        for (let j = 0; j < colsM2; j++) {
+        for (let j = 0; j < cols2; j++) {
             resultMatrix[i][j] = 0;
-            for (let h = 0; h < rowsM2; h++) {
+            for (let h = 0; h < rows2; h++) {
                 resultMatrix[i][j] += matrix1[i][h] * matrix2[h][j];
             }
         }
