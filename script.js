@@ -1,3 +1,7 @@
+function printArray(arr, separator = ", ") {
+    console.log(arr.join(separator));
+}
+
 function printMatrix(matrix) {
     matrix.forEach(row => console.log(row.join(" ")));
 }
