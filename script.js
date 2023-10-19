@@ -6,6 +6,10 @@ function printMatrix(matrix, itemSeparator = " ") {
     matrix.forEach(row => printArray(row, itemSeparator));
 }
 
+function getArrayOfLength(length) {
+    return Array.from({length});
+}
+
 function getRandomInteger(rndMin = 0, rndMax = 9) {
     return Math.floor(Math.random() * (rndMax - rndMin + 1)) + rndMin;
 }
