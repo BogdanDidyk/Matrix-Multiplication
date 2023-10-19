@@ -2,8 +2,8 @@ function printArray(arr, separator = ", ") {
     console.log(arr.join(separator));
 }
 
-function printMatrix(matrix) {
-    matrix.forEach(row => console.log(row.join(" ")));
+function printMatrix(matrix, itemSeparator = " ") {
+    matrix.forEach(row => printArray(row, itemSeparator));
 }
 
 function getRandomInteger(rndMin = 0, rndMax = 9) {
