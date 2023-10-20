@@ -14,6 +14,10 @@ function getRandomInteger(min = 0, max = 9) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getRandomIntegerArray(length, min, max) {
+    return getArrayOfLength(length).map(() => getRandomInteger(min, max));
+}
+
 function getRandomMatrix(rows, cols, min, max) {
     const matrix = [];
 
