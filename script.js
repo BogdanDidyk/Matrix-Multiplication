@@ -18,17 +18,8 @@ function getRandomIntegerArray(length, min, max) {
     return getArrayOfLength(length).map(() => getRandomInteger(min, max));
 }
 
-function getRandomMatrix(rows, cols, min, max) {
-    const matrix = [];
-
-    for (let i = 0; i < rows; i++) {
-        matrix[i] = [];
-        for (let j = 0; j < cols; j++) {
-            matrix[i][j] = getRandomInteger(min, max);
-        }
-    }
-
-    return matrix;
+function getRandomIntegerMatrix(rows, cols, min, max) {
+    return getArrayOfLength(rows).map(() => getRandomIntegerArray(cols, min, max));
 }
 
 function productTwoMatrices(matrix1, matrix2) {
@@ -72,10 +63,10 @@ const padCenter = function(str, maxLength, fillString) {
     return str.padStart(padLeft, fillString).padEnd(maxLength, fillString);
 }
 
-const m1 = getRandomMatrix(2, 1);
-const m2 = getRandomMatrix(1, 2);
+const m1 = getRandomIntegerMatrix(2, 1, 1, 9);
+const m2 = getRandomIntegerMatrix(1, 2, 1, 9);
 const m3 = productTwoMatrices(m1, m2);
-const m4 = getRandomMatrix(2, 2);
+const m4 = getRandomIntegerMatrix(2, 2, 1, 9);
 const m5 = raiseMatrixToPower(m4, 2);
 
 console.log(padCenter("Multiply", 50, "-"));
